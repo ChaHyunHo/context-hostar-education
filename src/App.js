@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import ColorBox from "./components/ColorBox";
+import ColorContext, { ColorProvider } from "./contexts/color";
+import SelectColors from "./components/SelectColors";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    /* Provider를 사용할때는 반드시 value값을 명시해줘야함. */
+    <ColorProvider>
+      <div>
+        <SelectColors />
+        <ColorBox />
+      </div>
+    </ColorProvider>
   );
-}
+};
 
 export default App;
